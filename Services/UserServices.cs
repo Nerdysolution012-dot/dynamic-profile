@@ -4,9 +4,7 @@ namespace DynamicProfileEndpoint.API.Services
 {
     public class UserServices
     {
-   
-
-        public async Task<List<User>>  GetUsers()
+        public List<User>  GetUsers()
         {
             return InMemoryDatabase.Profiles;
         }

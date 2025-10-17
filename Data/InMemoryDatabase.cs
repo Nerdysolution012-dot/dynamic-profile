@@ -6,7 +6,6 @@
         {
              new User()
              {
-                    Id = 1,
                     Email = "Muizmabamidu@gmail.com",
                     Name = "Mabamidu Muiz",
                     Stack = "Backend Developer"
