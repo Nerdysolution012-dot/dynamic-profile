@@ -1,0 +1,6 @@
+@DynamicProfileEndpoint.API_HostAddress = http://localhost:5001
+
+GET {{DynamicProfileEndpoint.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

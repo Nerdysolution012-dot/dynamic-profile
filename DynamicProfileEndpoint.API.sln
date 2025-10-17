@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicProfileEndpoint.API", "DynamicProfileEndpoint.API.csproj", "{D071B29A-11C1-7DBF-9AA8-D1073E696CFA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D071B29A-11C1-7DBF-9AA8-D1073E696CFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D071B29A-11C1-7DBF-9AA8-D1073E696CFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D071B29A-11C1-7DBF-9AA8-D1073E696CFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D071B29A-11C1-7DBF-9AA8-D1073E696CFA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {33C862C8-04B7-4F03-A4B0-282F16706A5A}
+	EndGlobalSection
+EndGlobal
