@@ -4,9 +4,7 @@ namespace DynamicProfileEndpoint.API.Result
 {
     public class APIResponse
     {
-        //public string Status { get; set; } = string.Empty;
-        //public object? Result { get; set; } = null;
-        //public string? ErrorMessage { get; set; }
+     
 
       
             public string Status { get; set; } = "success";

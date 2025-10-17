@@ -1,7 +1,6 @@
 ﻿using DynamicProfileEndpoint.API.Data;
 using DynamicProfileEndpoint.API.Result;
 using DynamicProfileEndpoint.API.Services;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DynamicProfileEndpoint.API.Controllers
@@ -31,11 +30,11 @@ namespace DynamicProfileEndpoint.API.Controllers
             {
                 User = new User
                 {
-                    Email = "MuizMabamidu@gmail.com",
+                    Email = "mabamidumuiz1125@gmail.com",
                     Name = "Muiz Mabamidu",
-                    Stack = "c#/Asp.netCore"
-                },
-                Timestamp = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ss.fffZ"), // ISO 8601 UTC format
+                    Stack = "C#/ASP.NET Core"
+                }, 
+                Timestamp = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ss.fffZ"), 
                 
                 Fact = catFact
             };

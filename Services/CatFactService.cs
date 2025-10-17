@@ -15,10 +15,10 @@ public class CatFactService
     {
         try
         {
-            // Ensure 5-second timeout for safety
+           
             using var cts = new CancellationTokenSource(TimeSpan.FromSeconds(5));
 
-            // Fetch cat fact from the required endpoint
+           
             var response = await _httpClient.GetFromJsonAsync<CatFactResponse>("https://catfact.ninja/fact", cts.Token);
 
 
@@ -32,7 +32,6 @@ public class CatFactService
         }
     }
 
-    // Local DTO class for Cat Facts API response
     private class CatFactResponse
     {
         public string Fact { get; set; } = string.Empty;

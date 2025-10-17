@@ -10,5 +10,3 @@
     }
 }
 
-
-//https://hng13.slack.com/archives/C09KQ5V09D5/p1760536361885809
