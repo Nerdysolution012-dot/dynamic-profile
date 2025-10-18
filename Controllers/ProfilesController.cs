@@ -14,7 +14,9 @@ namespace DynamicProfileAPI.Controllers
             _httpClient = httpClient;
         }
 
-        [HttpGet]
+        [HttpGet("/me")]
+       
+
         public async Task<IActionResult> GetProfile()
         {
             try
@@ -41,8 +43,9 @@ namespace DynamicProfileAPI.Controllers
                 };
 
                 Response.ContentType = "application/json";
-
                 return Ok(result);
+
+              
             }
             catch (Exception ex)
             {
