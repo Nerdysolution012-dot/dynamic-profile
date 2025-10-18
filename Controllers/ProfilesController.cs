@@ -42,9 +42,12 @@ namespace DynamicProfileAPI.Controllers
                     timestamp = DateTime.UtcNow.ToString("o")
                 };
 
-                Response.ContentType = "application/json";
-                return Ok(result);
-
+                return new ContentResult
+                {
+                    Content = JsonSerializer.Serialize(result),
+                    ContentType = "application/json",
+                    StatusCode = 200
+                };
               
             }
             catch (Exception ex)
