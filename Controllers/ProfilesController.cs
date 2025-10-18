@@ -50,7 +50,7 @@ namespace DynamicProfileAPI.Controllers
                     StatusCode = 200
                 };
               
-            }
+       }
             catch (Exception ex)
             {
                 return StatusCode(500, new
