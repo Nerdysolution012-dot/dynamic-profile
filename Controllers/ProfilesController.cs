@@ -1,47 +1,57 @@
-﻿using DynamicProfileEndpoint.API.Data;
-using DynamicProfileEndpoint.API.Result;
-using DynamicProfileEndpoint.API.Services;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using System.Text.Json;
 
-namespace DynamicProfileEndpoint.API.Controllers
+namespace DynamicProfileAPI.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
-    public class ProfilesController : ControllerBase
+    [Route("api/[controller]")]
+    public class ProfileController : ControllerBase
     {
-        private readonly CatFactService _catFactService;
-        private readonly ILogger<ProfilesController> _logger;
+        private readonly HttpClient _httpClient;
 
-        public ProfilesController(CatFactService catFactService, ILogger<ProfilesController> logger)
+        public ProfileController(HttpClient httpClient)
         {
-            _catFactService = catFactService;
-            _logger = logger;
+            _httpClient = httpClient;
         }
 
-        [HttpGet("/me")]
+        [HttpGet]
         public async Task<IActionResult> GetProfile()
         {
-
-            _logger.LogInformation("Fetching dynamic profile with cat fact...");
-
-            var catFact = await _catFactService.GetRandomCatFactAsync();
-
-            var response = new APIResponse
+            try
             {
-                User = new User
+               
+                var response = await _httpClient.GetStringAsync("https://catfact.ninja/fact");
+
+                var json = JsonDocument.Parse(response);
+
+                var catFact = json.RootElement.GetProperty("fact").GetString();
+
+          
+                var result = new
                 {
-                    Email = "mabamidumuiz1125@gmail.com",
-                    Name = "Muiz Mabamidu",
-                    Stack = "C#/ASP.NET Core"
-                }, 
-                Timestamp = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ss.fffZ"), 
-                
-                Fact = catFact
-            };
+                    status = "success",
+                    user = new
+                    {
+                        Email = "mabamidumuiz1125@gmail.com",
+                        Name = "Muiz Mabamidu",
+                        Stack = "C#/ASP.NET Core"
+                    },
+                    fact = catFact,
+                    timestamp = DateTime.UtcNow.ToString("o")
+                };
 
-            return Ok(response);
+                Response.ContentType = "application/json";
 
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new
+                {
+                    status = "error",
+                    message = ex.Message
+                });
+            }
         }
-
     }
 }
