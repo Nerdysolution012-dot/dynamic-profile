@@ -33,14 +33,15 @@ namespace DynamicProfileAPI.Controllers
                 {
                     status = "success",
 
-                    User = new
+                    user = new
                     {
-                        Email = "mabamidumuiz1125@gmail.com",
-                        Name = "Muiz Mabamidu",
-                        Stack = "C#/ASP.NET Core"
+                        name = "Muiz Mabamidu",
+                        email = "mabamidumuiz1125@gmail.com",
+                        stack = "C#/ASP.NET Core"
                     },
-                    fact = catFact,
-                    timestamp = DateTime.UtcNow.ToString("o")
+                    timestamp = DateTime.UtcNow.ToString("o"),
+                    fact = catFact
+                  
                 };
 
                 return new ContentResult
