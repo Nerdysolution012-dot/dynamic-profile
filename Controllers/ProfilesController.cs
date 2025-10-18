@@ -32,7 +32,8 @@ namespace DynamicProfileAPI.Controllers
                 var result = new
                 {
                     status = "success",
-                    user = new
+
+                    User = new
                     {
                         Email = "mabamidumuiz1125@gmail.com",
                         Name = "Muiz Mabamidu",
